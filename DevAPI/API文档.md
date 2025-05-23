@@ -25,7 +25,7 @@
 | [:3334/callback/health](./Health.md) | 健康检查         |
 | [:3334/callback/inform](./Inform.md) | PAAS通知         |
 | [:3335/callback/config](./Config.md) | 后台配置接口     |
-| [:3335/callback/stat][./Stat.md]     | 获取游戏汇总数据 |
+| [:3335/callback/stat](./Stat.md)     | 获取游戏汇总数据 |
 
 **注意**
 
