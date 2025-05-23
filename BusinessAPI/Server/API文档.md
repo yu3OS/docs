@@ -12,13 +12,13 @@
 
 ![callback_config](./Resources/callback_config.png "callback_config")
 
-| 接口                                | 说明         |
-| ----------------------------------- | ------------ |
-| [get_sstoken](./get_sstoken.md)     | 获取token    |
-| [update_sstoken](./update_sstoken)  | 更新sstoken  |
-| [get_user_info](./get_user_info.md) | 获取用户信息 |
-| [change_score](./change_score.md)   | 加减积分     |
-| [get_score](./get_score)            | 获取积分     |
+| 接口                                  | 说明        |
+| ----------------------------------- | --------- |
+| [get_sstoken](./get_sstoken.md)     | 获取token   |
+| [update_sstoken](./update_sstoken)  | 更新sstoken |
+| [get_user_info](./get_user_info.md) | 获取用户信息    |
+| [change_score](./change_score.md)   | 加减积分      |
+| [get_score](./get_score)            | 获取积分      |
 
 
 
