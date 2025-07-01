@@ -57,6 +57,8 @@
    
    val GAME_START = "game_start"
    val GAME_UPDATE_BALANCE = "game_update_balance"
+   val LOAD_START_STATUS = "load_started"
+   val LOAD_COMPLETED = "load_completed"
    
    @JavascriptInterface
    fun game_load_progress(progress:String){
@@ -64,8 +66,13 @@
    }
    
    @JavascriptInterface
-   fun game_load_complete(){
+   fun game_load_complete(type:String){
      //游戏加载完成
+     if(type == LOAD_START_STATUS){
+       //游戏开始状态
+     }else if(type == LOAD_COMPLETED){
+       //游戏加载完成
+     }
    }
    
    
@@ -99,19 +106,19 @@
    
    
    ```
-
+   
    **游戏方法说明**
-
+   
    1. game_load_progress：游戏加载进度显示
-
-   2. game_load_complete：游戏资源加载完毕后，通过此方法通知App，方便其选择合适时机显示webview以及调用**game_start**方法继续游戏流程
-
+   
+   2. game_load_complete：游戏开始加载和资源加载完毕状态，通过此方法通知App，方便其选择合适时机显示webview以及调用**game_start**方法继续游戏流程
+   
    3. game_destroy：游戏内点击关闭，通过此方法通知App关闭游戏webview
-
+   
    4. game_recharge: 游戏内用户点击充值或积分不足时跳转充值，则调用此JS方法
-
+   
    5. game_update_balance:  属于游戏js的方法,客户充值成功后通知游戏更新用户积分，需要客户端主动调用并且传递如下参数:
-
+   
       | 参数名 | 类型   | 是否必须 | 说明     |
       | ------ | ------ | -------- | -------- |
       | score  | Number | 是       | 最新积分 |
@@ -122,11 +129,11 @@
       val json = "{score: 10000}";
       gameUpdateBalance(json)
       ```
-
+   
       
-
+   
    6. game_start: 属于游戏js的方法，需要客户端主动调用实现并且传递如下参数来验证并且连接到游戏：
-
+   
       | 参数名      | 类型   | 是否必须 | 说明                      |
       | ----------- | ------ | -------- | ------------------------- |
       | user_id     | String | 是       | 用户唯一ID                |
@@ -135,9 +142,9 @@
       | score_icon  | String | 否       | 积分对应图标url(如金币等) |
       | language    | String | 否       | 语言代码（ISO 639-1）     |
       | user_data   | String | 否       | 自定义数据                |
-
+   
       可采用以下例子进行实现
-
+   
       ```kotlin
       val json = "{user_id: '100001'," +
       "code: 'xeihkfk88ekk1s'," +
@@ -148,11 +155,11 @@
       
       gameStart(json)
       ```
-
+   
       **以上如server_addr,score_icon等需要传入地址的参数需要先base64编码，再进行urlencode编码**
-
+   
       **user_data可以根据接入方需求或者特殊游戏需要进行传参，如接入方需要获取用户在某个直播间的游玩记录可以传递如："roomId=10000"这样的参数记录来统计**
-
+   
       
 
 
