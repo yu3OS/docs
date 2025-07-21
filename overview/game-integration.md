@@ -1,7 +1,9 @@
 
+# 游戏接入流程
+
 ## 接入流程图
 
-![时序图](./images/1.png "时序图")
+![时序图](https://static.3os.co/uploads/2025/07/18/A8C8E86B/game_integration.png "时序图")
 
 ## 开发需要
 

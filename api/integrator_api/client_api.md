@@ -1,6 +1,6 @@
-# PAAS 游戏接入平台
+# 接入商客户端接入
 
-<img src="./Resources/uml.jpeg" alt="uml" style="zoom: 67%;" />
+<img src="https://static.3os.co/uploads/2025/07/18/EEFF23B4/uml.jpeg" alt="uml" style="zoom: 67%;" />
 
 ## 客户端快速接入
 
@@ -169,6 +169,5 @@
 ​			
 
 ​	
-
 
 
