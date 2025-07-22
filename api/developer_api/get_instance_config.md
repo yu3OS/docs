@@ -72,11 +72,11 @@
 
    | 变量名称           | 接入文档                                                  |
    | ------------------ | --------------------------------------------------------- |
-   | api_get_sstoken    | [get_sstoken](../BusinessAPI/Server/get_sstoken.md)       |
-   | api_update_sstoken | [update_sstoken](../BusinessAPI/Server/update_sstoken.md) |
-   | api_get_userinfo   | [get_userinfo](../BusinessAPI/Server/get_userinfo.md)     |
-   | api_get_score      | [get_score](../BusinessAPI/Server/get_score.md)           |
-   | api_change_score   | [change_score](../BusinessAPI/Server/change_score.md)     |
+   | api_get_sstoken    | [get_sstoken](/api/integrator_api/server_api/get_sstoken.md)       |
+   | api_update_sstoken | [update_sstoken](/api/integrator_api/server_api/update_sstoken.md) |
+   | api_get_userinfo   | [get_userinfo](/api/integrator_api/server_api/get_user_info.md)     |
+   | api_get_score      | [get_score](/api/integrator_api/server_api/get_score.md)           |
+   | api_change_score   | [change_score](/api/integrator_api/server_api/change_score.md)     |
 
 ### 返回码
 

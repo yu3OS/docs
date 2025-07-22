@@ -1,13 +1,19 @@
+# 游戏开发流程
 
 ## 概述
 
 目前游戏PaaS平台只支持H5客户端。开发者按PaaS要求，提供**游戏服务端、游戏后台、H5客户端**。审核通过后，即可接入PaaS平台。
 游戏服务端、游戏后台，仅需提供编译好的二进制文件及完整的服务启动命令。H5客户端，提供打包好的静态资源文件。
 
-> 注意：
-> 1. 游戏服务暂不提供PHP等脚本语言运行环境，暂时仅支持通过二进制直接启动的运行方式。
-> 2. 游戏服务运行所使用的数据库、缓存，目前只支持MySQL和Redis。
-> 3. 本文档中的源码均为做逻辑说明的伪代码，供参考。
+
+::: warning
+注意：
+1. 游戏服务暂不提供PHP等脚本语言运行环境，暂时仅支持通过二进制直接启动的运行方式。
+2. 游戏服务运行所使用的数据库、缓存，目前只支持MySQL和Redis。
+3. 本文档中的源码均为做逻辑说明的伪代码，供参考。
+:::
+
+
 
 ## 概念
 
@@ -20,7 +26,7 @@ PaaS：指3os开放平台
 ## 工作流程图
 
 游戏开发者需要了解的完整流程图：
-![时序图](./images/2.png "时序图")
+![时序图](https://static.3os.co/uploads/2025/07/18/269EF8E5/game_develop.png "时序图")
 其中，游戏服务端需监听3333(客户端连接端口)，及3334(PaaS调度端口)。游戏后台服务是一个独立服务，监听3335端口。游戏客户端是发布好的客户端H5文件。
 
 ## 开发说明
@@ -40,7 +46,7 @@ app.game_load_progress(30.0);
 //加载完成，进入主界面
 app.game_load_complete('load_completed');
 ```
-> App与H5交互函数的实现方法可以参考 [这里](../BusinessAPI/Client/README.md)
+> App与H5交互函数的实现方法可以参考 [这里](/api/integrator_api/client_api.md)
 
 2.解析URL参数
 ```typescript
@@ -226,7 +232,7 @@ http.Post("api_paas_config", string(req))
 
 #### 用户认证
 
-当收到客户端登录请求，并得到客户端传递的必要参数后(通过socket协议)，服务端通过 [get_sstoken](../BusinessAPI/Server/get_sstoken.md) 接口做用户认证：
+当收到客户端登录请求，并得到客户端传递的必要参数后(通过socket协议)，服务端通过 [get_sstoken](/api/integrator_api/server_api/get_sstoken.md) 接口做用户认证：
 ```go
 //构造请求参数
 req := SSTokenRequest{
@@ -254,27 +260,27 @@ http.Post("https://...", string(r)) //api_get_sstoken
 
 #### 刷新sstoken
 
-在一定的有效期内（一般为3天），可以通过 [update_sstoken](../BusinessAPI/Server/update_sstoken.md) 接口刷新sstoken，获得更长的有效期。
+在一定的有效期内（一般为3天），可以通过 [update_sstoken](/api/integrator_api/server_api/update_sstoken.md) 接口刷新sstoken，获得更长的有效期。
 
 #### 获取用户信息
 
-通过 [get_user_info](../BusinessAPI/Server/get_user_info.md) 接口，可以通过用户ID获取用户信息。
+通过 [get_user_info](/api/integrator_api/server_api/get_user_info.md) 接口，可以通过用户ID获取用户信息。
 
 #### 获取用户积分
 
-通过 [get_score](../BusinessAPI/Server/get_score.md) 接口，可以通过用户ID获取用户积分。
+通过 [get_score](/api/integrator_api/server_api/get_score.md) 接口，可以通过用户ID获取用户积分。
 
 #### 用户加减分
 
-通过 [change_score](../BusinessAPI/Server/change_score.md) 接口，可以对用户进行加减积分操作。
+通过 [change_score](/api/integrator_api/server_api/change_score.md) 接口，可以对用户进行加减积分操作。
 
 > 注意：游戏逻辑，应该对加减积分的成功与否负责。比如，某一回合游戏中，扣分成功，却在结算阶段由于某种异常导致未给胜利的用户结算成功(加分)，则需要游戏维护一个结算失败的重试机制，保证用户最终结算成功。
 
 #### 回调接口
 
 游戏服务端需要通过3334端口实现两个PaaS的回调接口：
-1. :3334/callback/health 健康检查接口 （[接口说明](../DevAPI/Health.md)）
-2. :3334/callback/inform 通知接口 （[接口说明](../DevAPI/Inform.md)）
+1. :3334/callback/health 健康检查接口 （[接口说明](/api/developer_api/Health.md)）
+2. :3334/callback/inform 通知接口 （[接口说明](/api/developer_api/Inform.md)）
 
 ### 游戏后台
 
@@ -286,14 +292,14 @@ http.Post("https://...", string(r)) //api_get_sstoken
 #### 配置接口
 
 游戏后台提供的可视化配置、查询游戏数据功能，对应的提供API接口，以方便接入方将后台功能集成到其业务后台中。
-1. :3335/callback/config 配置接口 （[接口说明](../DevAPI/Config.md)）
-2. :3335/callback/stat 数据查询接口 （[接口说明](../DevAPI/Stat.md)）
+1. :3335/callback/config 配置接口 （[接口说明](/api/developer_api/Config.md)）
+2. :3335/callback/stat 数据查询接口 （[接口说明](/api/developer_api/Stat.md)）
 > 注意：PaaS要求游戏后台服务须总是监听在3335端口。
 #### 回调接口
 
 同样的，游戏后台服务也需要通过3335端口实现两个PaaS的回调接口：
-1. :3335/callback/health 健康检查接口 （[接口说明](../DevAPI/Health.md)）
-2. :3335/callback/inform 通知接口 （[接口说明](../DevAPI/Inform.md)）
+1. :3335/callback/health 健康检查接口 （[接口说明](/api/developer_api/Health.md)）
+2. :3335/callback/inform 通知接口 （[接口说明](/api/developer_api/Inform.md)）
 > 注意：PaaS要求游戏后台服务须总是监听在3335端口。
 
 ### 服务打包
