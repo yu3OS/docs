@@ -4,7 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "3OS",
   description: "3OS - Standardized Full-Lifecycle Ecosystem Platform",
-  base: "/3os-docs/",
+  base: "/docs/",
   themeConfig: {
     footer: {
       message: "STM TECH PTE. LTD.",
