@@ -87,7 +87,7 @@
    }
    
    @JavascriptInterface
-   fun game_update_balance(){
+   fun game_update_balance(score:Int){
      //游戏金币更新通知
    }
    
@@ -117,16 +117,17 @@
    
    4. game_recharge: 游戏内用户点击充值或积分不足时跳转充值，则调用此JS方法
    
-   5. game_update_balance:  属于游戏js的方法,客户充值成功后通知游戏更新用户积分，需要客户端主动调用并且传递如下参数:
+   5. game_update_balance:  属于双方用来通知金币的函数，游戏可以通过这个函数通知客户端金币的变换，客户端也可以在充值成功后通知游戏更新用户积分，需要客户端主动调用并且传递如下参数:
    
-      | 参数名 | 类型   | 是否必须 | 说明     |
-      | ------ | ------ | -------- | -------- |
-      | score  | Number | 是       | 最新积分 |
-
+      | 参数名 | 类型   | 是否必须 | 说明       |
+      | ------ | ------ | -------- | ---------- |
+      | score  | Number | 是       | 最新积分   |
+      | userid | String | 是       | 当前用户ID |
+   
       可采用以下例子进行实现：
-
+   
       ```kotlin
-      val json = "{score: 10000}";
+      val json = "{"score":100000,"userid":"123"}";
       gameUpdateBalance(json)
       ```
    
@@ -156,7 +157,7 @@
       gameStart(json)
       ```
    
-      **以上如server_addr,score_icon等需要传入地址的参数需要先base64编码，再进行urlencode编码**
+      ****
    
       **user_data可以根据接入方需求或者特殊游戏需要进行传参，如接入方需要获取用户在某个直播间的游玩记录可以传递如："roomId=10000"这样的参数记录来统计**
    
