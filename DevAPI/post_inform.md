@@ -30,7 +30,7 @@ POST请求
 
 1. type类型如下:
    * instance_status_started: 启动成功/失败通知
-   * instance_status_can_maintance: 可维护通知
+   * instance_status_can_maintain: 可维护通知
 2. 启动成功/失败通知，在实例启动后发送；可维护通知，在维护流程中发送
 
 
