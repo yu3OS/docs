@@ -38,8 +38,11 @@ POST请求
 | message  | String | 结果描述                   |
 | data     | Object | 配置信息                   |
 | └ mysql | Object | 包含mysql的host/port等信息 |
+| └ mongoDB | Object | 包含mongoDB的host/port等信息 |
 | └ redis | Object | 包含redis的host/port等信息 |
 | └ apis  | Object | 包含与游戏交互的接口地址   |
+
+
 
 ### 响应示例
 
@@ -55,6 +58,13 @@ POST请求
             "password": "whoever drat wherever kindheartedly fatherly",
             "database": "thorn"
         },
+      	"mongoDB": {
+            "host": "mechanic phooey",
+            "port": 3306,
+            "username": "pro unaware knowingly eyeglasses",
+            "password": "whoever drat wherever kindheartedly fatherly",
+            "database": "thorn"
+        }
         "redis": {
             "host": "or censor optimal awesome",
             "port": 6379,
