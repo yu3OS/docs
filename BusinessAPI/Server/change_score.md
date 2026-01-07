@@ -46,14 +46,14 @@ X-AppID: "yu32504091343UKAPes"
 
 ### 请求参数
 
-| 参数名      | 类型    | 是否必填 | 说明                     |
-| ----------- | ------- | -------- | ------------------------ |
-| user_id     | String  | 是       | 用户ID                   |
-| ss_token    | String  | 是       | 授权码                   |
-| score_diff  | Float64 | 是       | 积分(正数加分，负数扣分) |
-| diff_msg    | String  | 是       | 加减积分原因             |
-| instance_id | String  | 是       | 游戏实例ID               |
-| user_data   | String  | 否       | 自定义数据               |
+| 参数名      | 类型    | 是否必填 | 说明                                 |
+| ----------- | ------- | -------- | ------------------------------------ |
+| user_id     | String  | 是       | 用户ID                               |
+| ss_token    | String  | 是       | 授权码                               |
+| score_diff  | Float64 | 是       | 积分(正数加分，负数扣分)             |
+| diff_msg    | String  | 是       | 加减积分原因                         |
+| instance_id | String  | 是       | 游戏实例ID                           |
+| user_data   | String  | 是       | 自定义数据（如果没有内容传递空即可） |
 
 
 

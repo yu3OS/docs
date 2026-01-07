@@ -46,11 +46,12 @@ X-AppID: "yu32504091343UKAPes"
 
 ### 请求参数
 
-| 参数名      | 类型   | 是否必填 | 说明       |
-| ----------- | ------ | -------- | ---------- |
-| user_id     | String | 是       | 用户ID     |
-| code        | String | 是       | 临时校验码 |
-| instance_id | String | 是       | 游戏实例ID |
+| 参数名      | 类型   | 是否必填 | 说明                                 |
+| ----------- | ------ | -------- | ------------------------------------ |
+| user_id     | String | 是       | 用户ID                               |
+| code        | String | 是       | 临时校验码                           |
+| instance_id | String | 是       | 游戏实例ID                           |
+| user_data   | String | 是       | 自定义数据（客户端传参，非空时传入） |
 
 
 
@@ -60,7 +61,8 @@ X-AppID: "yu32504091343UKAPes"
 {
     "user_id": "1000009",
     "code": "cvlp8v2q7nplobifkn3g",
-    "instance_id": "2504031347sffK3d"
+    "instance_id": "2504031347sffK3d",
+  	"user_data": "xxxx"
 }
 ```
 
