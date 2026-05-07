@@ -26,6 +26,7 @@ POST请求
 | X-Timestamp | String | 是       | 当前时间戳(秒) |
 | X-Nonce     | String | 是       | 随机字符串     |
 | X-AppID     | String | 是       | 应用ID         |
+| X-OrderID   | String | 是       | 订单ID         |
 
 
 
@@ -36,11 +37,13 @@ X-Signature : "814c7ecbffca7e1fe3fcadeae1da6a3b"
 X-Timestamp : "1744083339"
 X-Nonce : "xef87ea"
 X-AppID: "yu32504091343UKAPes"
+X-OrderID: "3os1778132572243237276rYHBp"
 ```
 
 
 
-**注意** 此请求头参数由paas方提供，接入方可根据签名，时间戳，随机字符串和APPID进行校验，根据PAAS后台提供的secret_key进行识别和比对，校验签名 sign = md5(nonce+AppID+secret+timestamp) ,请妥善保管secret_key
+**注意** 此请求头参数由paas方提供，接入方可根据签名，时间戳，随机字符串和APPID进行校验，根据PAAS后台提供的secret_key进行识别和比对，校验签名 sign = md5(nonce+AppID+secret+timestamp) ,请妥善保管secret_key,
+X-OrderID用来作为每笔更新积分的唯一订单ID，可用来判断唯一性。
 
 
 
