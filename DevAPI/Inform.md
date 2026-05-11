@@ -72,12 +72,7 @@ POST请求
    
      
    
-   * <font color='red'>TODO data格式持续更新</font>
-   
-     
-   
-
-​	      
+   * <font color='red'>注意：data 格式会随平台版本持续更新，请关注版本更新日志获取最新信息。</font>
 
 ### 响应参数
 

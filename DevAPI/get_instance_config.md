@@ -49,35 +49,35 @@ POST请求
 ```json
 {
     "code": 0,
-    "message": "worth till into regularly",
+    "message": "success",
     "data": {
         "mysql": {
-            "host": "mechanic phooey",
+            "host": "127.0.0.1",
             "port": 3306,
-            "username": "pro unaware knowingly eyeglasses",
-            "password": "whoever drat wherever kindheartedly fatherly",
-            "database": "thorn"
+            "username": "game_user",
+            "password": "example_password",
+            "database": "game_db"
         },
       	"mongoDB": {
-            "host": "mechanic phooey",
-            "port": 3306,
-            "username": "pro unaware knowingly eyeglasses",
-            "password": "whoever drat wherever kindheartedly fatherly",
-            "database": "thorn"
-        }
+            "host": "127.0.0.1",
+            "port": 27017,
+            "username": "game_user",
+            "password": "example_password",
+            "database": "game_db"
+        },
         "redis": {
-            "host": "or censor optimal awesome",
+            "host": "127.0.0.1",
             "port": 6379,
             "username": "",
-            "password": "around after anti",
+            "password": "example_password",
             "database": 0
         },
         "apis": {
-            "api_get_sstoken": "zowie daily",
-            "api_update_sstoken": "next",
-            "api_get_userinfo": "pace gray",
-            "api_get_score": "fowl including er fearless quizzically",
-            "api_change_score": "down"
+            "api_get_sstoken": "https://example.com/api/get_sstoken",
+            "api_update_sstoken": "https://example.com/api/update_sstoken",
+            "api_get_userinfo": "https://example.com/api/get_userinfo",
+            "api_get_score": "https://example.com/api/get_score",
+            "api_change_score": "https://example.com/api/change_score"
         }
     }
 }
@@ -92,7 +92,7 @@ POST请求
    | ------------------ | --------------------------------------------------------- |
    | api_get_sstoken    | [get_sstoken](../BusinessAPI/Server/get_sstoken.md)       |
    | api_update_sstoken | [update_sstoken](../BusinessAPI/Server/update_sstoken.md) |
-   | api_get_userinfo   | [get_userinfo](../BusinessAPI/Server/get_userinfo.md)     |
+   | api_get_userinfo   | [get_user_info](../BusinessAPI/Server/get_user_info.md)     |
    | api_get_score      | [get_score](../BusinessAPI/Server/get_score.md)           |
    | api_change_score   | [change_score](../BusinessAPI/Server/change_score.md)     |
 

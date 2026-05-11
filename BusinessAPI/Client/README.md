@@ -97,11 +97,11 @@
    
    
    fun gameStart(params:String){
-   	CallJs("$GAME_START($params)")
+   	callJs("$GAME_START($params)")
    }
-   
+
    fun gameUpdateBalance(params:String){
-     CallJs("$GAME_UPDATE_BALANCE($params)")
+     callJs("$GAME_UPDATE_BALANCE($params)")
    }
    
    
@@ -127,7 +127,7 @@
       可采用以下例子进行实现：
    
       ```kotlin
-      val json = "{"score":100000,"userid":"123"}";
+      val json = "{\"score\":100000,\"userid\":\"123\"}";
       gameUpdateBalance(json)
       ```
    
@@ -160,16 +160,5 @@
       ****
    
       **user_data可以根据接入方需求或者特殊游戏需要进行传参，如接入方需要获取用户在某个直播间的游玩记录可以传递如："roomId=10000"这样的参数记录来统计**
-   
-      
-
-
-
-​		
-
-​			
-
-​	
-
 
 

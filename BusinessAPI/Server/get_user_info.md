@@ -76,7 +76,7 @@ X-AppID: "yu32504091343UKAPes"
 | └  user_id  | String | 用户ID   |
 | └ user_name | String | 用户昵称 |
 | └ head_img  | String | 用户头像 |
-| └ score     | Int64  | 用户积分 |
+| └ score     | Float64 | 用户积分（整数部分） |
 
 
 

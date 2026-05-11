@@ -1,4 +1,4 @@
-# State
+# Stat
 
 
 
@@ -33,7 +33,7 @@ POST请求
 | ------- | ------ | -------- |
 | code    | Int    | 返回码   |
 | message | String | 结果描述 |
-| Data    | Object | 返回数据 |
+| data    | Object | 返回数据 |
 
 
 

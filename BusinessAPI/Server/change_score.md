@@ -56,7 +56,7 @@ X-OrderID用来作为每笔更新积分的唯一订单ID，可用来判断唯一
 | score_diff  | Float64 | 是       | 积分(正数加分，负数扣分)             |
 | diff_msg    | String  | 是       | 加减积分原因                         |
 | instance_id | String  | 是       | 游戏实例ID                           |
-| user_data   | String  | 是       | 自定义数据（如果没有内容传递空即可） |
+| user_data   | String  | 是（可为空字符串） | 自定义数据（如果没有内容传递空即可） |
 
 
 

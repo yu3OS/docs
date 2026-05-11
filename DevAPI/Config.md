@@ -41,7 +41,7 @@ POST请求
 ```json
 {
     "code": 0,
-    "message": "",
+    "message": ""
 }
 ```
 

@@ -53,7 +53,7 @@ POST请求
 ```json
 {
     "code": 0,
-    "message": "worth till into regularly",
+    "message": "success",
     "data": {
         "game_id": "",
         "game_name": ""
